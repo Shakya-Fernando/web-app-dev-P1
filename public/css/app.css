@@ -1,0 +1,612 @@
+/*/////////////////////// app.blade.php ////////////////////*/
+/* Content */
+body {
+    /* Pattern from https://css-pattern.com/ */
+    --s: 50px; /* control the size*/
+    --c1: #000000;
+    --c2: #0d0d0d;
+    
+    --g:conic-gradient(at 90% 40%,#0000 75%,var(--c1) 0);
+    background: var(--g),var(--g) var(--s) var(--s) var(--c2);
+    background-size: calc(2*var(--s)) calc(2*var(--s));
+    
+    color: #ffffff; /* Set text color to white for contrast */
+  }
+
+/* Container styles for both navbar and content */
+.container, .navbar {
+    max-width: 1200px; /* Ensure consistent width for alignment */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 0px 0px 25px 25px;
+    background-color: #343a40f5; /* Also bg-dark */
+}
+
+.container {
+    background-color: #252a2eea; /* Slightly lighter than the navbar for the content area */
+    border-radius: 25px 25px 0px 0px;
+    padding: 50px;
+}
+
+/* Styles for nav bar */
+.navbar-nav {
+    margin-left: auto; /* Moves the navbar items to the RHS */
+}
+
+.navbar-nav .nav-item .nav-link {
+    background-color: #343a40;
+    color: #dbdbdb;
+    border-radius: 15px; /* Rounded edges */
+    margin-right: 10px; /* Space between nav items */
+    padding: 8px 15px;
+    transition: background-color 0.3s ease; /* Background colour transition */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #495057; /* Slightly lighter on hover */
+    color: #ff6b81;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 5px;
+    font-size: 1.5em;
+    color: #ffffff !important; /* The colour wouldn't change for some reason */
+}
+
+/* Hamburger Menu Styles*/
+
+.navbar-toggler {
+    background-color: #252a2e; /* or any other color that suits your design */
+    border-radius: 25px;
+}
+
+.navbar-toggler:hover {
+    background-color: #0f1113;
+}
+
+/* Style for profile icon */
+.rounded-circle {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+    background-color: #252a2e; 
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Style for the dropdown items */
+.dropdown-menu .dropdown-item {
+    color: #dbdbdb; /* Text color */
+    padding: 10px 20px; /* Spacing for better readability */
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ff6b81d2; /* Custom pink color on hover */
+    color: #dbdbdb; /* Text color on hover */
+    border-radius: 30px;
+}
+
+/* Adjust arrow in dropdown */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #252a2e transparent;
+}
+
+/*///////////////////////// home.blade.php /////////////////////////////*/
+
+/* Style for the Hero Section AKA Welcome Section*/
+.jumbotron-custom {
+    background-color: #53274ca4; /* Contrast the navbar */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 30px;
+    padding: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 1200px; /* Ensure the same width as the container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero Section Title */
+.display-4 {
+    font-weight: bold;
+}
+
+/* Apply pink to certain words */
+.pink-highlight {
+    color: #ff6b81;
+}
+
+/* Style for rounded buttons */
+.btn-custom {
+    background-color: #ff6b81; 
+    color: #ffffff;
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Smooth transition for buttom background-colour */
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #ff4d6d; /* Slightly darker pink on hover */
+    color: #ffffff;
+}
+
+/* Style for the container around the cards */
+.cards-container {
+    background-color: #0f1113; 
+    border-radius: 25px; 
+    padding: 20px;
+    max-width: 1200px; /* Keep the same width as other containers */
+    margin: auto;
+}
+
+/* Style for the section title with mixed colors and underline */
+.cards-container-title {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.cards-container-title span.most-popular {
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0px; /* Adjust the space between text and underline */
+    border-bottom: 2px solid #ffffff; /* Underline color and thickness */
+}
+
+.card-custom {
+    background-color: #343a40;
+    border-radius: 15px; 
+    padding: 10px;
+    padding-top: 15px;
+    margin-bottom: 10px; /* Space between cards and cards-container */
+    margin-top: 10px;
+}
+
+/* Image styling */
+.card-custom img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image fits within the specified dimensions */
+    border-radius: 15px;
+    transition: transform 0.3s ease; /* Smooth transition for image zoom */
+}
+
+/* Hover effect for the cards */
+.card-custom:hover {
+    transform: translateY(-3px); /* Slightly elevate the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Image zoom effect on hover */
+.card-custom img {
+    transition: transform 0.3s ease; /* Smooth transition for image zoom */
+    border-radius: 15px;
+}
+
+.card-custom:hover img {
+    transform: scale(1.03); /* Slightly zoom the image */
+}
+/*///////////////////////////////// items.blade.php //////////////////////////////////*/
+.items-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #0f1113; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.items-container h1 {
+    margin-bottom: -20px; /* Fixing spacing */
+}
+
+.btn-add {
+    margin-top: -20px; /* Button inline with the "Browse Items" title */
+}
+
+.sort-options {
+    background-color: #53274ca4;
+    display: flex;
+    justify-content: center; /* Horizontal */
+    align-items: center; /* Vertical */
+    border-radius: 20px;
+    padding: 10px; 
+    flex-wrap: wrap; /* Allow wrapping to avoid overlap */
+}
+
+.sort-options select {
+    background-color: #0f1113; /* Search box background color */
+    border: 1px solid #252a2e; 
+    color: #ffffff; /* Text color */
+    border-radius: 30px;
+    margin-left: 10px;
+    /* GPT */
+    appearance: none; /* Remove default styling for select */ 
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    -moz-appearance: none; /* Remove default styling for Firefox */
+    cursor: pointer; /* Add pointer cursor on hover */
+    
+}
+
+.sort-options select:focus {
+    outline: none; /* Remove the outline on focus */
+    border: 1px solid #252a2e;
+    background-color: #0f1113; /* Search box background color */
+    color: #ffffff; /* Text color */
+    border-radius: 20px;
+}
+
+/* Sort button */
+.btn-sort {
+    background-color: #ff6b81; 
+    color: #ffffff;
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 5px 20px;
+    margin-left: 30px;
+    transition: background-color 0.3s ease; /* Smooth transition for buttom background-colour */
+    border: none;
+}
+
+.btn-sort:hover {
+    background-color: #ff4d6d; /* Slightly darker pink on hover */
+    color: #ffffff;
+}
+
+/*///////////////////////////////// item_detail.blade.php ////////////////////////////*/
+
+/* Section for item-details */
+.item-detail-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #0f1113; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.item-detail-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.item-detail-container .row {
+    margin-bottom: 30px;
+}
+
+.item-detail-container img {
+    display: block;
+    margin: auto;
+    width: 300px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image fits within the specified dimensions */
+    border-radius: 15px;
+}
+
+.item-detail-container h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.item-detail-container p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Delete Button */
+.btn-delete {
+    background-color: #ff4965; 
+    color: #ffffff;
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Smooth transition for buttom background-colour */
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #ff264e; /* Slightly darker pink on hover */
+    color: #ffffff;
+}
+
+/* Custom style for success flash message when Item is deleted */
+.alert-success {
+    background-color: #57ec79d5;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-color: #000000;
+    text-align: center;
+}
+/* Error Message */
+.error-msg {
+    background-color: #ff264ee0;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border-color: #000000;
+    text-align: center;
+}
+
+/* Remove bullet points from error messages list */
+.alert ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding-left: 0; /* Removes any padding */
+}
+
+.alert ul li {
+    display: inline; /* Keeps the list items inline */
+}
+
+/* Review section under the item-details section */
+.reviews-container {
+    background-color: #53274ca4; /* Contrast the navbar */
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 1200px; /* Ensure the same width as the container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reviews-container h3 {
+    margin-bottom: -20px; /* Spacing */
+    color: #fafafa; 
+    font-size: 2em;
+}
+.btn-review {
+    margin-top: -20px; /* Aling button with h3 */
+}
+
+.review-list {
+    max-width: 100%;
+}
+
+.review-item {
+    padding: 15px;
+    background-color: #0f1113;
+    border-radius: 15px;
+}
+
+.review-item h5 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.review-item p {
+    margin-bottom: 10px;
+}
+
+/* Delete button for reviews */
+.btn-delete-sm {
+    background-color: #ff4965; 
+    color: #ffffff;
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 5px 12px;
+    transition: background-color 0.3s ease; /* Smooth transition for buttom background-colour */
+    border: none;
+
+}
+
+.btn-delete-sm:hover {
+    background-color: #ff264e; /* Slightly darker pink on hover */
+    color: #ffffff;
+}
+
+/* Edit button for reviews */
+.btn-edit-sm {
+    background-color: #3949d8; 
+    color: #ffffff;
+    border-radius: 50px; /* Fully rounded corners */
+    padding: 5px 12px;
+    transition: background-color 0.3s ease; /* Smooth transition for buttom background-colour */
+    border: none;
+
+}
+
+.btn-edit-sm:hover {
+    background-color: #2639e4; /* Slightly darker pink on hover */
+    color: #ffffff;
+}
+
+/*//////////////////// manufacturers.blade.php ////////////////////////*/
+
+.manufacturers-container{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #0f1113; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.manufacturers-container h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/*///////////////////// manufacturers_items.blade.php /////////////////////*/
+
+.manufacturer-items-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #0f1113; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/*//////////////////////// aboutus.blade.php //////////////////////*/
+
+.aboutus-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #0f1113; 
+    border-radius: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.aboutus-container h1, .aboutus-container h2 {
+    color: #ffffff; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Adjust spacing and styling within the container */
+.aboutus-container section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for elavation */
+    background-color: #343a40; 
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+/* Apply the hover effect */
+.aboutus-container section:hover {
+    transform: translateY(-10px); /* Slightly elevate the section */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/*//////////////////////// profile.blade.php //////////////////////*/
+
+/* Container for the whole profile page */
+.profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #0f1113;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+}
+
+/* Header section at the top */
+.profile-header {
+    background-color: #252a2e;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Flexbox layout for profile content */
+.profile-content {
+    display: flex;
+    gap: 30px;
+}
+
+/* Profile info box on the left */
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Circular image container */
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight Shadow */
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Box underneath the image */
+.profile-details-box {
+    background-color: #252a2e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Larger profile details box on the right */
+.profile-details {
+    flex: 2;
+    background-color: #252a2e;
+    padding: 20px;
+    border-radius: 15px;
+    min-height: 50%;
+}
+
+/* Media query for responsiveness */
+/* Stackoverflow: https://stackoverflow.com/questions/13076371/media-query-for-ipad-and-desktop-max-width */
+
+@media (max-width: 768px) {
+
+    /* Profile Section*/
+    .profile-content {
+        flex-direction: column;
+    }
+    /* About Us */
+    .aboutus-container {
+        padding: 15px;
+    }
+    /* Item View Page*/
+    .sort-options {
+        flex-direction: column;
+        align-items: stretch; /* Make elements fill the container width */
+    }
+
+    .sort-options select,
+    .btn-sort {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%; /* Make the elements take full width */
+    }
+
+    .btn-add {
+        width: 100%;
+        margin-top: 10px; /* Add spacing when it wraps to a new line */
+        text-align: center; /* Center the button text */
+    }
+
+    .items-container h1 {
+        text-align: center; /* Center the title on smaller screens */
+        margin-bottom: 10px; /* Adjust spacing */
+    }
+
+    .btn-review {
+        margin-left: 0;
+        margin-top: 30px;
+        width: 100%; /* Make the elements take full width */
+    }
+}
